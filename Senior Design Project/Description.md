@@ -3,7 +3,7 @@
 ## This folder is dedicated to files from my Senior Design Project
 
 ### The project is a scheduling program that creates employee schedules.
-### We used HTML, Java, Python, XML, MySQL, GoRules for this project
+### We used HTML, Java, Python, XML, MySQL, GoRules, and a SpringBoot server for this project
 ### I will also attach Markdown files for the individual parts of the project!
 
 I will also provide a general rundown of the flow of the project and its components.
