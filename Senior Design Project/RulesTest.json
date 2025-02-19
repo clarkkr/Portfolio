@@ -1,0 +1,173 @@
+{
+  "contentType": "application/vnd.gorules.decision",
+  "nodes": [
+    {
+      "id": "cc71994d-9bf6-4c84-8f0b-7746cac3e371",
+      "type": "inputNode",
+      "position": {
+        "x": 150,
+        "y": 120
+      },
+      "name": "Request"
+    },
+    {
+      "id": "773427dd-0887-4913-b563-f2973d3406b4",
+      "type": "decisionTableNode",
+      "position": {
+        "x": 560,
+        "y": 120
+      },
+      "name": "maxWeeklyHours Table",
+      "content": {
+        "hitPolicy": "first",
+        "inputs": [
+          {
+            "id": "EZlBg0bM9P",
+            "name": "Max Weekly Hours",
+            "type": "expression",
+            "field": "MaxWeeklyHours"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "tq105SaCSw",
+            "name": "Number of Shifts",
+            "type": "expression",
+            "field": "shift.numShifts"
+          },
+          {
+            "id": "Xjky5AWBmm",
+            "name": "Shift Label",
+            "type": "expression",
+            "field": "shift.label"
+          },
+          {
+            "id": "FfXJSA3IAZ",
+            "name": "Employee Id",
+            "type": "expression",
+            "field": "shift.employeeid"
+          },
+          {
+            "id": "7qWHLx0N0t",
+            "type": "expression",
+            "field": "shift.preferredShift",
+            "name": "Preferred Shift"
+          }
+        ],
+        "rules": [
+          {
+            "_id": "F4CaXjHZNp",
+            "EZlBg0bM9P": "< 0",
+            "tq105SaCSw": "0",
+            "Xjky5AWBmm": "\"Unable to work a Shift.\"",
+            "FfXJSA3IAZ": "EmployeeID",
+            "7qWHLx0N0t": "PreferredShiftPattern"
+          },
+          {
+            "_id": "gNKNzrpAUY",
+            "EZlBg0bM9P": "[0..7]",
+            "tq105SaCSw": "0",
+            "Xjky5AWBmm": "\"Unable to work a Shift.\"",
+            "FfXJSA3IAZ": "EmployeeID",
+            "7qWHLx0N0t": "PreferredShiftPattern"
+          },
+          {
+            "_id": "m6DKHvF1Jq",
+            "EZlBg0bM9P": "[8..10]",
+            "tq105SaCSw": "1",
+            "Xjky5AWBmm": "\"Able to work a Partial Shift.\"",
+            "FfXJSA3IAZ": "EmployeeID",
+            "7qWHLx0N0t": "PreferredShiftPattern"
+          },
+          {
+            "_id": "lKvLRQImEa",
+            "EZlBg0bM9P": "[10..17]",
+            "tq105SaCSw": "1",
+            "Xjky5AWBmm": "\"Able to work a Full Shift.\"",
+            "FfXJSA3IAZ": "EmployeeID",
+            "7qWHLx0N0t": "PreferredShiftPattern"
+          },
+          {
+            "_id": "CSIaZTfree",
+            "EZlBg0bM9P": "[18..19]",
+            "tq105SaCSw": "2",
+            "Xjky5AWBmm": "\"Able to work a Full and Partial Shift.\"",
+            "FfXJSA3IAZ": "EmployeeID",
+            "7qWHLx0N0t": "PreferredShiftPattern"
+          },
+          {
+            "_id": "VlZq8MkZzL",
+            "EZlBg0bM9P": "[20..27]",
+            "tq105SaCSw": "2",
+            "Xjky5AWBmm": "\"Able to work Two Full Shifts.\"",
+            "FfXJSA3IAZ": "EmployeeID",
+            "7qWHLx0N0t": "PreferredShiftPattern"
+          },
+          {
+            "_id": "uix7JRQMjW",
+            "EZlBg0bM9P": "[28..29]",
+            "tq105SaCSw": "3",
+            "Xjky5AWBmm": "\"Able to work Two Full Shifts and a Partial Shift.\"",
+            "FfXJSA3IAZ": "EmployeeID",
+            "7qWHLx0N0t": "PreferredShiftPattern"
+          },
+          {
+            "_id": "lsAw0z5isj",
+            "EZlBg0bM9P": "[30..37]",
+            "tq105SaCSw": "3",
+            "Xjky5AWBmm": "\"Able to work Three Full Shifts.\"",
+            "FfXJSA3IAZ": "EmployeeID",
+            "7qWHLx0N0t": "PreferredShiftPattern"
+          },
+          {
+            "_id": "xL6VNh1R2w",
+            "EZlBg0bM9P": "[38..39]",
+            "tq105SaCSw": "4",
+            "Xjky5AWBmm": "\"Able to work Three Full Shifts and a Partial Shift.\"",
+            "FfXJSA3IAZ": "EmployeeID",
+            "7qWHLx0N0t": "PreferredShiftPattern"
+          },
+          {
+            "_id": "4pN8VTLN31",
+            "EZlBg0bM9P": "40",
+            "tq105SaCSw": "4",
+            "Xjky5AWBmm": "\"Able to work Four Full Shifts.\"",
+            "FfXJSA3IAZ": "EmployeeID",
+            "7qWHLx0N0t": "PreferredShiftPattern"
+          },
+          {
+            "_id": "FKNu05dgHQ",
+            "EZlBg0bM9P": "> 40",
+            "tq105SaCSw": "4",
+            "Xjky5AWBmm": "\"Hours can not be greater than 40. Scheduled for 40 hours.\"",
+            "FfXJSA3IAZ": "EmployeeID",
+            "7qWHLx0N0t": "PreferredShiftPattern"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f84bc618-0ab2-4f16-8b96-8d81c8d11df6",
+      "type": "outputNode",
+      "position": {
+        "x": 1030,
+        "y": 120
+      },
+      "name": "Response"
+    }
+  ],
+  "edges": [
+    {
+      "id": "2a83643e-2d7e-4fc9-b7e2-8fc34d9a6155",
+      "sourceId": "cc71994d-9bf6-4c84-8f0b-7746cac3e371",
+      "type": "edge",
+      "targetId": "773427dd-0887-4913-b563-f2973d3406b4"
+    },
+    {
+      "id": "086ae4e6-d6d8-4153-a694-f8338fd0e99d",
+      "sourceId": "773427dd-0887-4913-b563-f2973d3406b4",
+      "type": "edge",
+      "targetId": "f84bc618-0ab2-4f16-8b96-8d81c8d11df6"
+    }
+  ]
+}
