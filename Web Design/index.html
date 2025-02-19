@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+        CSE 383
+        Name: Kory Clark 
+        Assignment: Lab7
+        Description:use JavaScript to create page
+-->
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <title>CSE 383</title>
+        </head>
+
+        <body>
+                <script type = "text/JavaScript">
+			document.write("<h1>");
+			document.write("Lab 7");							document.write ("</h1>");
+	
+			document.write("<h2>");
+			document.write("Kory Clark");
+			document.write("</h2>");
+
+			document.write("<h3>");
+			document.write("March 9, 2022");
+			document.write("</h3>");
+
+			document.write("<canvas id='myCanvas' width='500' height='500'></canvas>");
+
+	function doRectangle() {
+		var canvas = document.getElementById('myCanvas');
+		if(canvas.getContext) {
+			var ctx = canvas.getContext('2d');
+			ctx.fillStyle ='rgb(0,0,255)';
+			ctx.fillRect(50, 300, 100, 100);
+		}
+
+	}
+			document.write("<button type='button'onClick='doRectangle();'>Rectangle</button>");
+
+        function doTime() {
+                var today = new Date();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                var dateTime = today + ' ' + time;
+                alert(dateTime);
+	}
+			document.write("<button type='button' onClick='doTime();'>Time</button>&nbsp;");
+      		 </script>
+        </body>
+</html>
+
